@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
     Firebase.initializeApp();
     return 
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'TIENDA',
       theme: AppTheme(selectedColor: 5).theme(),
-      debugShowCheckedModeBanner: false,
       home: const ShoppingScreen()
     );
   }

@@ -20,7 +20,7 @@ class MenuDrawer extends StatelessWidget {
       children: <Widget>[
         DrawerHeader(
           decoration: const BoxDecoration(
-            color: Colors.deepPurpleAccent,
+            color: Color.fromARGB(255, 3, 102, 119),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
