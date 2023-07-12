@@ -53,73 +53,73 @@ final caballero = [
 ];
 final dama = [
   const Carta(
-      id: 1,
+      id: 7,
       nombre: "Blusa Roja",
       precio: 8.30,
       imagen: "blusaRoja.jpg",
       descripcion: "Algodon..."),
       const Carta(
-      id: 2,
+      id: 8,
       nombre: "Blusa Amarilla",
       precio: 8.30,
       imagen: "blusaAmarilla.jpg",
       descripcion: "Algodon..."),
       const Carta(
-      id: 3,
-      nombre: "Blusa Negra",
+      id: 9,
+      nombre: "Chaleco Blanco",
       precio: 8.30,
-      imagen: "blusaNegra.jpg",
+      imagen: "damaBlanca.jpg",
       descripcion: "Algodon..."),
       const Carta(
-      id: 4,
-      nombre: "Blusa verde",
+      id: 10,
+      nombre: "Chaleco Verde",
       precio: 8.30,
-      imagen: "blusaVerde.jpg",
+      imagen: "damaVerde.jpg",
       descripcion: "Algodon..."),
       const Carta(
-      id: 5,
-      nombre: "Blusa Azul",
+      id: 11,
+      nombre: "Chaleco Rojo",
       precio: 8.30,
-      imagen: "blusaAzul.jpg",
+      imagen: "damaRoja.jpg",
       descripcion: "Algodon..."),
       
 ];
 final zapatos = [
   const Carta(
-      id: 1,
+      id: 12,
       nombre: "Zapatos Negros",
       precio: 8.30,
       imagen: "zapatos1.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 2,
+      id: 13,
       nombre: "Zapatos Blancos",
       precio: 8.30,
       imagen: "zapatos2.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 3,
+      id: 14,
       nombre: "Zapatos Amarillos",
       precio: 8.30,
       imagen: "zapatos3.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 4,
+      id: 15,
       nombre: "Zapatos Gris",
       precio: 8.30,
       imagen: "zapatos6.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 5,
-      nombre: "Zapatos Blancos",
+      id: 16,
+      nombre: "Zapatos Morados",
       precio: 8.30,
-      imagen: "zapatos5.jpg",
+      imagen: "zapatosMorados.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 6,
-      nombre: "Zapatos Rosa",
+      id: 17,
+      nombre: "Zapatos Verdes",
       precio: 8.30,
-      imagen: "zapatos4.jpg",
+      imagen: "zapatoVerde.jpg",
       descripcion: "Cuero..."),
      
 ];

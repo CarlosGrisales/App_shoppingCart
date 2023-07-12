@@ -90,9 +90,13 @@ flutter:
     - assets/zapatos1.jpg
     - assets/zapatos2.jpg
     - assets/zapatos3.jpg
-    - assets/zapatos4.jpg
-    - assets/zapatos5.jpg
     - assets/zapatos6.jpg
+    - assets/damaBlanca.jpg
+    - assets/damaRoja.jpg
+    - assets/damaVerde.jpg
+    - assets/zapatosMorados.jpg
+    - assets/zapatoVerde.jpg
+    - assets/botasCafes.jpg
    
    
   # assets:

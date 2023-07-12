@@ -4,6 +4,8 @@ import 'package:integracion_app/carrito/carrito.dart';
 import 'package:integracion_app/screens/loginscreen.dart';
 import 'package:integracion_app/screens/shoppingscreen.dart';
 
+import '../screens/CartScreen_.dart';
+
 
 class MenuDrawer extends StatelessWidget {
   MenuDrawer({super.key});
@@ -45,9 +47,8 @@ class MenuDrawer extends StatelessWidget {
         ListTile(
           title: const Text('Carrito'),
           onTap: () {
-            // ...
-            // Luego cierra el drawer
-            //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => Carrito()));
+          
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => Screencart()));
           },
           trailing: const Icon(Icons.add_shopping_cart),
         ),

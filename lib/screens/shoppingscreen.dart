@@ -3,6 +3,8 @@ import 'package:integracion_app/carrito/carrito.dart';
 import 'package:provider/provider.dart';
 import '../widgets/card.dart';
 import '../widgets/menuDrawer.dart';
+import 'CartScreen_.dart';
+import 'loginscreen.dart';
 
 class ShoppingScreen extends StatefulWidget {
   const ShoppingScreen({super.key});
@@ -57,7 +59,8 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                         var snackBar2 = SnackBar(content: Text('Carrito Lleno'));
                         carrito.numeroItems != 0
                             ?
-                            ScaffoldMessenger.of(context).showSnackBar(snackBar2)
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext)=>Screencart()))
                             : ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }),
                   Positioned(

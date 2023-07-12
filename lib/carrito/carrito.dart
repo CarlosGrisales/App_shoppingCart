@@ -4,7 +4,7 @@ import 'package:integracion_app/widgets/item.dart';
 class Carrito extends ChangeNotifier{
   Map<String, Item> _items = {};
   Map<String, Item> get items{
-    return {...items};
+    return {..._items};
   }
 
   int get numeroItems{
