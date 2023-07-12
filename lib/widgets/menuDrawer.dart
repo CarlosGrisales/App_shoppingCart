@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:integracion_app/carrito/carrito.dart';
+import 'package:integracion_app/screens/loginscreen.dart';
+import 'package:integracion_app/screens/shoppingscreen.dart';
+
 
 class MenuDrawer extends StatelessWidget {
   MenuDrawer({super.key});
@@ -28,23 +32,24 @@ class MenuDrawer extends StatelessWidget {
             ),
         ),
         ListTile(
-          title: const Text('Configuracion'),
+          title: const Text('Inicio'),
           onTap: () {
+                         
             // Actualiza el estado de la aplicación
             // ...
             // Luego cierra el drawer
-            Navigator.pop(context);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => ShoppingScreen()));
           },
-          trailing: const Icon(Icons.settings),
+          trailing: const Icon(Icons.home),
         ),
         ListTile(
-          title: const Text('Perfil'),
+          title: const Text('Carrito'),
           onTap: () {
             // ...
             // Luego cierra el drawer
-            Navigator.pop(context);
+            //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => Carrito()));
           },
-          trailing: const Icon(Icons.storage),
+          trailing: const Icon(Icons.add_shopping_cart),
         ),
         ListTile(
           title: const Text('Membresia'),
@@ -61,7 +66,8 @@ class MenuDrawer extends StatelessWidget {
           onTap: () {
             // ...
             // Luego cierra el drawer
-            SystemNavigator.pop();
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => ScreenLogin()));
+            //SystemNavigator.pop();
           },
           trailing: const Icon(Icons.exit_to_app),
         ),

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:integracion_app/screens/screensCaballero.dart';
-import 'package:integracion_app/widgets/inkewellCard.dart';
-import 'package:integracion_app/widgets/navigationBar.dart';
-import '../widgets/cardContainer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:integracion_app/screens/shoppingscreen.dart';
 
 class ScreenLogin extends StatelessWidget {
   const ScreenLogin({super.key});
@@ -104,7 +101,7 @@ class _ChatView extends StatelessWidget {
               onTap: (){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => NavigationBarIntegration()),
+      MaterialPageRoute(builder: (context) => ShoppingScreen()),
     );
   },
               child: Container(

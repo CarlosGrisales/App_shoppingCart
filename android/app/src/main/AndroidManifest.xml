@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.carlosgrisales.integracion_app">
    <application
-        android:label="integracion_app"
+        android:label="shoppin_cart"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
