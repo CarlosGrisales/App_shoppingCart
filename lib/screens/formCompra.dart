@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:integracion_app/screens/posCompra.dart';
 import 'package:integracion_app/screens/shoppingscreen.dart';
 
 class FormCompra extends StatelessWidget {
@@ -10,19 +11,23 @@ class FormCompra extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       backgroundColor: Color.fromARGB(255, 3, 102, 119),
-            scrolledUnderElevation: 50,
-            title: const Text("Formulario De Compra"),
-            elevation: 0,
-       
+        backgroundColor: Color.fromARGB(255, 3, 102, 119),
+        scrolledUnderElevation: 50,
+        title: const Text("Formulario De Compra"),
+        elevation: 0,
       ),
-      body: formularioIngreso(),
+      body: DatosUsuario(),
     );
   }
 }
 
-class formularioIngreso extends StatelessWidget {
+class DatosUsuario extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController _nombreForm = TextEditingController(text: "");
+  TextEditingController _apeForm = TextEditingController(text: "");
+  TextEditingController _dirForm = TextEditingController(text: "");
+  TextEditingController _codForm = TextEditingController(text: "");
+  TextEditingController _pagoForm = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +41,11 @@ class formularioIngreso extends StatelessWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(10),
-                   
-                    
                   ),
                   const SizedBox(height: 30),
                   Container(
                     child: TextFormField(
+                      controller: _nombreForm,
                       autofocus: false,
                       decoration: InputDecoration(
                         hintText: ' Nombres',
@@ -62,6 +66,7 @@ class formularioIngreso extends StatelessWidget {
                   const SizedBox(height: 30),
                   Container(
                     child: TextFormField(
+                      controller: _apeForm,
                       autofocus: false,
                       decoration: InputDecoration(
                         hintText: 'Apellidos',
@@ -82,6 +87,7 @@ class formularioIngreso extends StatelessWidget {
                   const SizedBox(height: 30),
                   Container(
                     child: TextFormField(
+                      controller: _dirForm,
                       autofocus: false,
                       decoration: InputDecoration(
                         hintText: 'Direccion de envio',
@@ -102,6 +108,7 @@ class formularioIngreso extends StatelessWidget {
                   const SizedBox(height: 30),
                   Container(
                     child: TextFormField(
+                      controller: _codForm,
                       autofocus: false,
                       decoration: InputDecoration(
                         hintText: 'Codigo Postal',
@@ -135,7 +142,7 @@ class formularioIngreso extends StatelessWidget {
                         if (_formKey.currentState!.validate()) {
                           Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                  builder: (BuildContext) => ShoppingScreen()));
+                                  builder: (BuildContext) => PosCompra(_nombreForm.text,_apeForm.text,_dirForm.text,_codForm.text)));
                         }
                       },
                     ),
