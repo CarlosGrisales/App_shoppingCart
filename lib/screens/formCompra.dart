@@ -3,17 +3,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:integracion_app/screens/shoppingscreen.dart';
 
-class ScreenLogin1 extends StatelessWidget {
-  const ScreenLogin1({super.key});
+class FormCompra extends StatelessWidget {
+  const FormCompra({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 198, 227, 231),
-        scrolledUnderElevation: 50,
-        title: const Text(""),
-        elevation: 0,
+       backgroundColor: Color.fromARGB(255, 3, 102, 119),
+            scrolledUnderElevation: 50,
+            title: const Text("Formulario De Compra"),
+            elevation: 0,
+       
       ),
       body: formularioIngreso(),
     );
@@ -26,7 +27,7 @@ class formularioIngreso extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            color: Color.fromARGB(255, 198, 227, 231),
+            color: Color.fromARGB(22, 198, 227, 231),
             padding: const EdgeInsets.symmetric(horizontal: 43.0),
             child: Form(
               key: _formKey,
@@ -35,18 +36,15 @@ class formularioIngreso extends StatelessWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(10),
-                    child: const Text(
-                      'INGRESO DE USUARIO',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black ),
-                    ),
+                   
+                    
                   ),
                   const SizedBox(height: 30),
                   Container(
                     child: TextFormField(
                       autofocus: false,
                       decoration: InputDecoration(
-                        hintText: 'User',
-                        prefixIcon: Icon(Icons.person),
+                        hintText: ' Nombres',
                         contentPadding: EdgeInsets.all(10),
                         hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
                         enabledBorder: UnderlineInputBorder(
@@ -54,8 +52,8 @@ class formularioIngreso extends StatelessWidget {
                                 BorderSide(color: Colors.black, width: 2)),
                       ),
                       validator: (value) {
-                        if (value != "admon") {
-                          return 'Usuario Incorrecto';
+                        if (value == null || value.isEmpty) {
+                          return 'PorFavor digite su nombre';
                         }
                         return null;
                       },
@@ -66,8 +64,7 @@ class formularioIngreso extends StatelessWidget {
                     child: TextFormField(
                       autofocus: false,
                       decoration: InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.security),
+                        hintText: 'Apellidos',
                         contentPadding: EdgeInsets.all(10),
                         hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
                         enabledBorder: UnderlineInputBorder(
@@ -75,9 +72,48 @@ class formularioIngreso extends StatelessWidget {
                                 BorderSide(color: Colors.black, width: 2)),
                       ),
                       validator: (value) {
-                        if (value != "123") {
-                          return "Clave Incorrecta";
-                          ;
+                        if (value == null || value.isEmpty) {
+                          return 'PorFavor digite su apellidos';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Container(
+                    child: TextFormField(
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        hintText: 'Direccion de envio',
+                        contentPadding: EdgeInsets.all(10),
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 2)),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'PorFavor digite la direccion de envio';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Container(
+                    child: TextFormField(
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        hintText: 'Codigo Postal',
+                        contentPadding: EdgeInsets.all(10),
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 2)),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'PorFavor digite su codigo Postal';
                         }
                         return null;
                       },
@@ -89,9 +125,9 @@ class formularioIngreso extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.62,
                     child: ElevatedButton(
                       child: const Text(
-                        "log In",
+                        "Confirmar Compra",
                         style: TextStyle(
-                            color: Color.fromRGBO(40, 48, 52, 1),
+                            color: Color.fromARGB(255, 3, 102, 119),
                             fontFamily: 'RadikalMedium',
                             fontSize: 14),
                       ),

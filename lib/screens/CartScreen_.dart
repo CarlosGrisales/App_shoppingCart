@@ -3,6 +3,7 @@ import 'package:integracion_app/carrito/carrito.dart';
 import 'package:provider/provider.dart';
 import '../widgets/card.dart';
 import '../widgets/menuDrawer.dart';
+import 'formCompra.dart';
 import 'loginscreen.dart';
 
 class Screencart extends StatefulWidget {
@@ -135,16 +136,15 @@ class _ScreencartState extends State<Screencart> {
                   ])),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            String compra = "";
-            carrito.items.forEach((key, value) {
-              compra = compra +
-                  value.nombre +
-                  " Cantidad" +
-                  value.cantidad.toString() +
-                  "\n";
-            });
+           var alert = SnackBar(
+                            content: Text('No puedes hacer Checkout, por favor llene el carrito'));
+                        carrito.numeroItems != 0
+                            ? Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext) => FormCompra()))
+                            : ScaffoldMessenger.of(context)
+                                .showSnackBar(alert);
           },
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(255, 3, 102, 119),
           child: Icon(
             Icons.send,
             color: Colors.amber,

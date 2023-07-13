@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:integracion_app/carrito/carrito.dart';
+import 'package:integracion_app/widgets/item.dart';
 import 'package:provider/provider.dart';
 import '../widgets/card.dart';
 import '../widgets/menuDrawer.dart';
@@ -32,19 +33,28 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
               Tab(
                 child: Padding(
                   padding: EdgeInsets.only(left: 5, right: 5),
-                  child: Text("Caballero"),
+                  child: Text(
+                    "Caballero",
+                    style: TextStyle(fontSize: 16, color: Colors.white54),
+                  ),
                 ),
               ),
               Tab(
                 child: Padding(
                   padding: EdgeInsets.only(left: 5, right: 5),
-                  child: Text("Dama"),
+                  child: Text(
+                    "Dama",
+                    style: TextStyle(fontSize: 16, color: Colors.white54),
+                  ),
                 ),
               ),
               Tab(
                 child: Padding(
                   padding: EdgeInsets.only(left: 5, right: 5),
-                  child: Text("Zapatos"),
+                  child: Text(
+                    "Zapatos",
+                    style: TextStyle(fontSize: 16, color: Colors.white54),
+                  ),
                 ),
               )
             ]),
@@ -55,13 +65,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       icon: Image.asset('assets/sewing4.png', width: 30),
                       padding: const EdgeInsets.only(top: 15, right: 15),
                       onPressed: () {
-                        var snackBar = SnackBar(content: Text('por favor llene el carrito'));
-                        var snackBar2 = SnackBar(content: Text('Carrito Lleno'));
+                        var snackBar = SnackBar(
+                            content: Text('por favor llene el carrito'));
+                        var snackBar2 =
+                            SnackBar(content: Text('Carrito Lleno'));
                         carrito.numeroItems != 0
-                            ?
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext)=>Screencart()))
-                            : ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                            ? Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext) => Screencart()))
+                            : ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
                       }),
                   Positioned(
                       top: 6,
@@ -79,8 +91,10 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                           style: const TextStyle(
                               color: Colors.white, fontSize: 10),
                         ),
-                      ))
+                      )),
+                     
                 ],
+                
               )
             ],
           ),
@@ -105,9 +119,9 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: const [
                             BoxShadow(
-                                color: Color(0x000005cc),
+                                color: Color.fromARGB(31, 0, 3, 204),
                                 blurRadius: 30,
-                                offset: Offset(10, 10))
+                                offset: Offset(2, 5))
                           ]),
                       child: Column(
                         children: <Widget>[
@@ -218,51 +232,52 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                     mainAxisSpacing: 2),
                 itemBuilder: (context, index) {
                   return Container(
-                      margin: const EdgeInsets.all(15),
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: Colors.black12,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Color(0x000005cc),
-                                blurRadius: 30,
-                                offset: Offset(10, 10))
-                          ]),
-                      child: Column(
-                        children: <Widget>[
-                          Image.asset("assets/${zapatos[index].imagen}"),
-                          Text(
-                            zapatos[index].nombre,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Text(
-                                "S/${zapatos[index].precio}",
-                                style: const TextStyle(fontSize: 16),
-                              )),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                disabledForegroundColor:
-                                    Colors.red.withOpacity(0.38),
-                                disabledBackgroundColor:
-                                    Colors.red.withOpacity(0.12)),
-                            onPressed: () {
-                              setState(() {
-                                carrito.agregarItem(
-                                    zapatos[index].id.toString(),
-                                    zapatos[index].nombre,
-                                    zapatos[index].precio,
-                                    "1",
-                                    zapatos[index].imagen,
-                                    1);
-                              });
-                            },
-                            child: const Text('Agregar'),
-                          )
-                        ],
-                      ));
+                    margin: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        color: Colors.black12,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0x000005cc),
+                              blurRadius: 30,
+                              offset: Offset(10, 10))
+                        ]),
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset("assets/${zapatos[index].imagen}"),
+                        Text(
+                          zapatos[index].nombre,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Text(
+                              "S/${zapatos[index].precio}",
+                              style: const TextStyle(fontSize: 16),
+                            )),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              disabledForegroundColor:
+                                  Colors.red.withOpacity(0.38),
+                              disabledBackgroundColor:
+                                  Colors.red.withOpacity(0.12)),
+                          onPressed: () {
+                            setState(() {
+                              carrito.agregarItem(
+                                  zapatos[index].id.toString(),
+                                  zapatos[index].nombre,
+                                  zapatos[index].precio,
+                                  "1",
+                                  zapatos[index].imagen,
+                                  1);
+                            });
+                          },
+                          child: const Text('Agregar'),
+                        ),
+                      ],
+                    ),
+                  );
                 },
               ),
             ),

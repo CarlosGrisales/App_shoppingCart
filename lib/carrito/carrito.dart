@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:integracion_app/widgets/item.dart';
 
-class Carrito extends ChangeNotifier{
+class Carrito extends ChangeNotifier {
   Map<String, Item> _items = {};
-  Map<String, Item> get items{
+  Map<String, Item> get items {
     return {..._items};
   }
 
-  int get numeroItems{
+  int get numeroItems {
     return _items.length;
   }
+
+  void ordenarItems() {
+  List<Item> itemList = _items.values.toList();
+
+  // Ordenar los items por algún criterio (por ejemplo, por nombre)
+  itemList.sort((a, b) => b.nombre.compareTo(a.nombre));
+
+  // Actualizar el mapa de items con la lista ordenada
+ // _items = Map.fromIterable(
+//    itemList,
+ //   key: (item) => item.id,
+ //   value: (item) => item,
+ // );
+
+}
 
   double get subTotal {
     var total = 0.0;
@@ -41,7 +56,7 @@ class Carrito extends ChangeNotifier{
     if (_items.containsKey(producto_id)) {
       _items.update(
           producto_id,
-          (old) =>Item(
+          (old) => Item(
               id: old.id,
               nombre: old.nombre,
               precio: old.precio,
@@ -81,7 +96,7 @@ class Carrito extends ChangeNotifier{
 
   void decrementarCantidadItem(String producto_id) {
     if (!_items.containsKey(producto_id)) return;
-    if ((_items[producto_id]?.cantidad??0) > 1) {
+    if ((_items[producto_id]?.cantidad ?? 0) >= 1) {
       _items.update(
           producto_id,
           (old) => Item(
@@ -94,9 +109,14 @@ class Carrito extends ChangeNotifier{
     } else {
       items.remove(producto_id);
     }
+    eliminarSiMenorAUno(producto_id);
   }
 
-  void removeCarrito() {
-    _items={};
+  void eliminarSiMenorAUno(String producto_id) {
+    if (!_items.containsKey(producto_id)) return;
+    if ((_items[producto_id]?.cantidad ?? 0) <= 0) {
+      _items.remove(producto_id);
+    }
   }
 }
+
