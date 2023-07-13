@@ -28,8 +28,8 @@ class MenuDrawer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [ 
             Image.asset('assets/man.png', height: 70,), 
-            const Text('Usuario'),
-            const Text('@usuario.com'),
+            const Text('Admon'),
+            const Text('@Admon.com'),
             ],
             ),
         ),
@@ -67,7 +67,7 @@ class MenuDrawer extends StatelessWidget {
           onTap: () {
             // ...
             // Luego cierra el drawer
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => ScreenLogin()));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext) => ScreenLogin1()));
             //SystemNavigator.pop();
           },
           trailing: const Icon(Icons.exit_to_app),
