@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:integracion_app/carrito/carrito.dart';
-import 'package:integracion_app/widgets/item.dart';
 import 'package:provider/provider.dart';
 import '../widgets/card.dart';
 import '../widgets/menuDrawer.dart';
 import 'CartScreen_.dart';
-import 'loginscreen.dart';
 
 class ShoppingScreen extends StatefulWidget {
   const ShoppingScreen({super.key});
@@ -26,7 +24,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
           key: _globalKey,
           backgroundColor: Colors.white,
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 3, 102, 119),
+            backgroundColor: const Color.fromARGB(255, 3, 102, 119),
             scrolledUnderElevation: 50,
             title: const Text("Online Store"),
             elevation: 0,
@@ -66,34 +64,33 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                       onPressed: () {
                         setState(() {
                           order = !order;
-                          }
-                        );
+                        });
                       },
                       padding: const EdgeInsets.only(top: 15, right: 15),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.sort_by_alpha_sharp,
-                        size: 35,
+                        size: 32,
                         color: Colors.black54,
                       )),
                   IconButton(
                       onPressed: () {
                         setState(() {
-                          
+                          order = !order;
                         });
                       },
                       padding: const EdgeInsets.only(top: 15, right: 15),
-                      icon: Icon(Icons.attach_money,
-                          size: 35, color: Colors.black54)),
+                      icon: const Icon(Icons.attach_money,
+                          size: 30, color: Colors.black54)),
                   Stack(
                     children: <Widget>[
                       IconButton(
                           icon: Image.asset('assets/sewing4.png', width: 30),
                           padding: const EdgeInsets.only(top: 15, right: 15),
                           onPressed: () {
-                            var snackBar = SnackBar(
+                            var snackBar = const SnackBar(
                                 content: Text('por favor llene el carrito'));
                             var snackBar2 =
-                                SnackBar(content: Text('Carrito Lleno'));
+                                const SnackBar(content: Text('Carrito Lleno'));
                             carrito.numeroItems != 0
                                 ? Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext) => Screencart()))

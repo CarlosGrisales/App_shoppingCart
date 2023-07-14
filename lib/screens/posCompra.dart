@@ -20,7 +20,7 @@ class PosCompra extends StatelessWidget {
     return Consumer<Carrito>(builder: (context, carrito, child) {
       return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 3, 102, 119),
+          backgroundColor: const Color.fromARGB(255, 3, 102, 119),
           scrolledUnderElevation: 50,
           title: const Text("Compra OK"),
           elevation: 0,
@@ -30,14 +30,16 @@ class PosCompra extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                Image.asset('assets/sewing4.png', width: 100),
+                const SizedBox(height: 30),
+                const Text(
                   "GRACIAS POR TU COMPRA",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.red),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Text(
                   "Nombre: " +
                       _nombreUs +
@@ -47,14 +49,14 @@ class PosCompra extends StatelessWidget {
                       _direccionUs +
                       "\nPostal: " +
                       _postalUs +
-                       "\nTotal: S/."+
+                      "\nTotal: S/." +
                       carrito.total.toStringAsFixed(3),
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ]),
         ),
       );
-    }
-   );
+    });
   }
 }

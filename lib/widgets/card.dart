@@ -82,41 +82,47 @@ final dama = [
       precio: 30.000,
       imagen: "damaRoja.jpg",
       descripcion: "Algodon..."),
+      const Carta(
+      id: 12,
+      nombre: "Chaleco Negro",
+      precio: 35.000,
+      imagen: "chaleconegro.jpg",
+      descripcion: "Algodon..."),
       
 ];
 final zapatos = [
   const Carta(
-      id: 12,
+      id: 13,
       nombre: "Zapatos Negros",
       precio: 50.000,
       imagen: "zapatos1.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 13,
+      id: 14,
       nombre: "Zapatos Blancos",
       precio: 45.000,
       imagen: "zapatos2.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 14,
+      id: 15,
       nombre: "Zapatos Amarillos",
       precio: 40.000,
       imagen: "zapatos3.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 15,
+      id: 16,
       nombre: "Zapatos Gris",
       precio: 55.000,
       imagen: "zapatos6.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 16,
+      id: 17,
       nombre: "Zapatos Morados",
       precio: 35.000,
       imagen: "zapatosMorados.jpg",
       descripcion: "Cuero..."),
       const Carta(
-      id: 17,
+      id: 18,
       nombre: "Zapatos Verdes",
       precio: 62.000,
       imagen: "zapatoVerde.jpg",

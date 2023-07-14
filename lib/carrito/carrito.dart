@@ -11,19 +11,9 @@ class Carrito extends ChangeNotifier {
     return _items.length;
   }
 
-  void ordenarItems() {
-  List<Item> itemList = _items.values.toList();
-
-  // Ordenar los items por algún criterio (por ejemplo, por nombre)
-  itemList.sort((a, b) => b.nombre.compareTo(a.nombre));
-
-  // Actualizar el mapa de items con la lista ordenada
- // _items = Map.fromIterable(
-//    itemList,
- //   key: (item) => item.id,
- //   value: (item) => item,
- // );
-
+List<Item> ordenarListaPorPrecio(List<Item> lista) {
+  lista.sort((a, b) => a.precio.compareTo(b.precio));
+  return lista;
 }
 
   double get subTotal {
@@ -119,4 +109,3 @@ class Carrito extends ChangeNotifier {
     }
   }
 }
-
