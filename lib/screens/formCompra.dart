@@ -31,7 +31,7 @@ class DatosUsuario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body: ListView(children: [Container(
             color: Color.fromARGB(22, 198, 227, 231),
             padding: const EdgeInsets.symmetric(horizontal: 43.0),
             child: Form(
@@ -149,6 +149,7 @@ class DatosUsuario extends StatelessWidget {
                   ),
                 ],
               ),
-            )));
+            ))
+            ]));
   }
 }
