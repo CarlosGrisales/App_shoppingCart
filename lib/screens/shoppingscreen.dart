@@ -16,6 +16,7 @@ class ShoppingScreen extends StatefulWidget {
 
 class _ShoppingScreenState extends State<ShoppingScreen> {
   final GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
+  bool order = false;
   @override
   Widget build(BuildContext context) {
     return Consumer<Carrito>(builder: (context, carrito, child) {
@@ -59,42 +60,66 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
               )
             ]),
             actions: <Widget>[
-              Stack(
-                children: <Widget>[
+              Row(
+                children: [
                   IconButton(
-                      icon: Image.asset('assets/sewing4.png', width: 30),
-                      padding: const EdgeInsets.only(top: 15, right: 15),
                       onPressed: () {
-                        var snackBar = SnackBar(
-                            content: Text('por favor llene el carrito'));
-                        var snackBar2 =
-                            SnackBar(content: Text('Carrito Lleno'));
-                        carrito.numeroItems != 0
-                            ? Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext) => Screencart()))
-                            : ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
-                      }),
-                  Positioned(
-                      top: 6,
-                      right: 6,
-                      child: Container(
-                        padding: const EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(4)),
-                        constraints:
-                            const BoxConstraints(minHeight: 14, minWidth: 14),
-                        child: Text(
-                          carrito.numeroItems.toString(),
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 10),
-                        ),
+                        setState(() {
+                          order = !order;
+                          }
+                        );
+                      },
+                      padding: const EdgeInsets.only(top: 15, right: 15),
+                      icon: Icon(
+                        Icons.sort_by_alpha_sharp,
+                        size: 35,
+                        color: Colors.black54,
                       )),
-                     
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          
+                        });
+                      },
+                      padding: const EdgeInsets.only(top: 15, right: 15),
+                      icon: Icon(Icons.attach_money,
+                          size: 35, color: Colors.black54)),
+                  Stack(
+                    children: <Widget>[
+                      IconButton(
+                          icon: Image.asset('assets/sewing4.png', width: 30),
+                          padding: const EdgeInsets.only(top: 15, right: 15),
+                          onPressed: () {
+                            var snackBar = SnackBar(
+                                content: Text('por favor llene el carrito'));
+                            var snackBar2 =
+                                SnackBar(content: Text('Carrito Lleno'));
+                            carrito.numeroItems != 0
+                                ? Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext) => Screencart()))
+                                : ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                          }),
+                      Positioned(
+                          top: 6,
+                          right: 6,
+                          child: Container(
+                            padding: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(4)),
+                            constraints: const BoxConstraints(
+                                minHeight: 14, minWidth: 14),
+                            child: Text(
+                              carrito.numeroItems.toString(),
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 10),
+                            ),
+                          )),
+                    ],
+                  )
                 ],
-                
               )
             ],
           ),
@@ -103,6 +128,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: GridView.builder(
+                reverse: order,
                 itemCount: caballero.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -163,6 +189,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: GridView.builder(
+                reverse: order,
                 itemCount: dama.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -223,6 +250,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: GridView.builder(
+                reverse: order,
                 itemCount: zapatos.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
