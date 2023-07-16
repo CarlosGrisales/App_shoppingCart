@@ -22,4 +22,4 @@ Esta aplicación móvil, desarrollada con Flutter, es un carrito de compra dise�
 3. Navega hasta el directorio del proyecto en tu terminal.
 4. Ejecuta el siguiente comando para obtener las dependencias necesarias:
 5. Conecta tu dispositivo móvil o inicia un emulador.
-6. Para el logeo de la vista inicial el usuario es admon y la contraseña es 123.
+6. Para el logueo de la vista inicial el usuario es admon y la contraseña es 123.
