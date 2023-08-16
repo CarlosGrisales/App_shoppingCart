@@ -52,6 +52,7 @@ dependencies:
   firebase_auth: "^4.6.3"
   font_awesome_flutter: ^10.4.0
   google_sign_in: "^6.1.4"
+  url_launcher: ^6.1.12
   
   
   
@@ -98,6 +99,8 @@ flutter:
     - assets/zapatoVerde.jpg
     - assets/botasCafes.jpg
     - assets/chaleconegro.jpg
+    - assets/logo_icono_principal.png
+
    
    
   # assets:
